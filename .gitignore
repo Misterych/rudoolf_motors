@@ -1,0 +1,7 @@
+.vs/
+*.user
+*.suo
+*.exe
+*.pdb
+*.cache
+*.FileListAbsolute.txt
