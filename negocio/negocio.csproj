@@ -93,15 +93,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clients\register.cs" />
+    <Compile Include="conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="users\edit.cs" />
+    <Compile Include="users\eliminate.cs" />
+    <Compile Include="users\register.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
     <Folder Include="control\" />
-    <Folder Include="users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\conexion\conexion.csproj">
+      <Project>{996b96da-275d-4f8c-a5bc-e60910ca40b0}</Project>
+      <Name>conexion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

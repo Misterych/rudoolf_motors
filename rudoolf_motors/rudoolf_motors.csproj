@@ -36,6 +36,9 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.28.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.28.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -54,6 +57,8 @@
     <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.0.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -84,6 +89,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,11 +99,30 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="ZstdSharp, Version=0.8.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.8.1\lib\net462\ZstdSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clients\register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clients\register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clients\RUCs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clients\RUCs.Designer.cs">
+      <DependentUpon>RUCs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio_seccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio_seccion.Designer.cs">
+      <DependentUpon>Inicio_seccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="panel_admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +137,39 @@
     <Compile Include="star.Designer.cs">
       <DependentUpon>star.cs</DependentUpon>
     </Compile>
+    <Compile Include="users\create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="users\create.Designer.cs">
+      <DependentUpon>create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="users\edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="users\edit.Designer.cs">
+      <DependentUpon>edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="users\eliminate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="users\eliminate.Designer.cs">
+      <DependentUpon>eliminate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="users\visualize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="users\visualize.Designer.cs">
+      <DependentUpon>visualize.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="clients\register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clients\RUCs.resx">
+      <DependentUpon>RUCs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio_seccion.resx">
+      <DependentUpon>Inicio_seccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="panel_admin.resx">
       <DependentUpon>panel_admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +181,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -141,7 +200,47 @@
   <ItemGroup>
     <Folder Include="config\" />
     <Folder Include="control\" />
-    <Folder Include="users\" />
+    <Folder Include="products\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adjunto-archivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comentarios-de-los-clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inmigracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sistema-de-seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\la-configuracion-de-privacidad %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\conexion\conexion.csproj">
+      <Project>{996b96da-275d-4f8c-a5bc-e60910ca40b0}</Project>
+      <Name>conexion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{768219e1-34fb-4660-9c93-f398f5ce8175}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

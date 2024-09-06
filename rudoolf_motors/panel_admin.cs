@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rudoolf_motors.clients;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,6 +102,40 @@ namespace rudoolf_motors
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
+            }
+        }
+
+        private void registrarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya existe una instancia del formulario
+            Form registerForm = Application.OpenForms.OfType<register>().FirstOrDefault();
+
+            if (registerForm == null) // Si no existe, crea una nueva instancia
+            {
+                registerForm = new clients.register();
+                registerForm.MdiParent = this; // Establece el formulario principal como MDI
+                registerForm.Show();
+            }
+            else
+            {
+                registerForm.BringToFront(); // Si ya existe, trae el formulario al frente
+            }
+        }
+
+        private void RUCs_Click(object sender, EventArgs e)
+        {
+            // Verifica si ya existe una instancia del formulario
+            Form rucForm = Application.OpenForms.OfType<clients.RUCs>().FirstOrDefault();
+
+            if (rucForm == null) // Si no existe, crea una nueva instancia
+            {
+                rucForm = new clients.RUCs();
+                rucForm.MdiParent = this; // Establece el formulario principal como MDI
+                rucForm.Show();
+            }
+            else
+            {
+                rucForm.BringToFront(); // Si ya existe, trae el formulario al frente
             }
         }
     }

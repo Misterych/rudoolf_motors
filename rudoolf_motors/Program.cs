@@ -16,7 +16,7 @@ namespace rudoolf_motors
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new star());
+            Application.Run(new Inicio_seccion());
         }
     }
 }
